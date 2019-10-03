@@ -39,6 +39,9 @@ for ln in all_lines[1:]: # skip the first line, which are the column names
 set_dict  = {"train":trn_lines,"dev":dev_lines, "test":tst_lines}
 
 dst_folder = '../data'
+if not os.path.exists(dst_folder):
+    os.mkdir(dst_folder)
+
 corpus = []
 
 for sub in ['train','dev','test']:
@@ -86,14 +89,13 @@ for sub in ['train','dev','test']:
 		fid.write(ln+'\n')
 	fid.close()
 
+#generate corpus data 
+if not os.path.exists(dst_folder+'/local'):
+    os.mkdir(dst_folder+'/local')
+
 fid = open('../data/local/corpus.txt', 'w')
 for ln in corpus:
 	fid.write(ln+'\n')
 fid.close()
 
 
-aa = []
-aa.append('123')
-print(aa)
-aa.append('234')
-print(aa)
