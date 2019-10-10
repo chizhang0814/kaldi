@@ -4,7 +4,7 @@
 
 gmmdir=exp/tri4b
 
-for chunk in train_clean_100 dev_clean test_clean; do
+for chunk in train dev test; do
     dir=fmllr/$chunk
     steps/nnet/make_fmllr_feats.sh --nj 10 --cmd "$train_cmd" \
         --transform-dir $gmmdir/decode_tgsmall_$chunk \
