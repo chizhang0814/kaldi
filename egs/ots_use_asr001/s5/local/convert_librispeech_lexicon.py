@@ -16,7 +16,7 @@ Vowels = ['AH0', 'AH1', 'AH2',
         'OW0','OW1','OW2']
 
 
-librispeech_lexicon = '/data/LibriSpeech-lm-SLR11/librispeech-lexicon.txt'
+librispeech_lexicon = '/home/ubuntu/src/kaldi/egs/ots_use_asr001/s5/local/librispeech-lexicon.txt'
 fid  = open(librispeech_lexicon)
 all_lexicon = fid.readlines()
 fid.close()
@@ -24,7 +24,8 @@ fid.close()
 for ln in all_lexicon:
     temp = ln.split('\t')
     temp2= ln.split(' ')
+    print(temp[0])
     print(temp)
-    print(temp2)
+    print(temp[1])
     print('\n')        
 
