@@ -79,6 +79,7 @@ GSYMS
 /egs/*/*/data
 /egs/*/*/fmllr
 /egs/*/*/nohup.out
+/egs/*/*/log
 
 # /tools/
 /tools/pocolm/

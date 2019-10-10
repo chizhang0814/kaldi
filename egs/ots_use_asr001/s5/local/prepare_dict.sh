@@ -28,7 +28,7 @@ lm_dir=$1
 g2p_model_dir=$2
 dst_dir=$3
 
-vocab=$lm_dir/librispeech-vocab.txt
+vocab=$lm_dir/vocab.txt
 [ ! -f $vocab ] && echo "$0: vocabulary file not found at $vocab" && exit 1;
 
 # this file is either a copy of the lexicon we download from openslr.org/11 or is
@@ -101,7 +101,7 @@ fi
 
 # The copy operation below is necessary, if we skip the g2p stages(e.g. using --stage 3)
 if [[ ! -s "$lexicon_raw_nosil" ]]; then
-  cp $lm_dir/librispeech-lexicon.txt $lexicon_raw_nosil || exit 1
+  cp $lm_dir/lexicon.txt $lexicon_raw_nosil || exit 1
 fi
 
 if [ $stage -le 3 ]; then
