@@ -8,7 +8,7 @@ data=/data/USE_ASR001
 #lm_url=www.openslr.org/resources/11
 
 mfccdir=mfcc
-stage=4
+stage=14
 
 . ./cmd.sh
 . ./path.sh
