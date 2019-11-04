@@ -3,7 +3,7 @@ import glob
 import pandas as pd 
 
 
-transcription_dir = '/Users/czhang/Downloads/USE_ASR002/Transcription'
+transcription_dir = '/data/USE_ASR002/Transcription'
 spoken_type = 'Conversational'
 
 print('---------', transcription_dir)
@@ -12,7 +12,7 @@ count = 0
 word_dict = set()
 sent_dict = set()
 
-segfid = open('/Users/czhang/Downloads/segments','w')
+segfid = open('~/src/kaldi/egs/ots_use_asr001/segments','w')
 textfid = open('/Users/czhang/Downloads/text','w')
 text_list  = []
 seg_list = []

@@ -38,7 +38,7 @@ decode_nj=10
 train_set=train_all_cleaned
 gmm=tri4a_cleaned
 nnet3_affix=_cleaned
-
+test_sets="aishell aidatatang magicdata thchs"
 # The rest are configs specific to this script.  Most of the parameters
 # are just hardcoded at this level, in the commands below.
 affix=cnn_1a

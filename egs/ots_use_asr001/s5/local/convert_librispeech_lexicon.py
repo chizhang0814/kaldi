@@ -125,9 +125,9 @@ for ln in all_lexicon:
                 new_lex.append("t")
         else:
                 new_lex.append(dict_map[temp2[i]])
-    print(ln.strip())
-    print(' '.join(new_lex))
-    print('\n')            
+    print(ln.strip().split('\t')[0]+ '\t'+' '.join(new_lex))
+    #print(' '.join(new_lex))
+    #print('\n')         ))   
   #      print(dict_map[temp2[i]])
     
     #print('\n')        

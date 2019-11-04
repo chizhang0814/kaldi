@@ -1,0 +1,20 @@
+# --minibatch-size=256 --srand=0 exp/nnet2_online/nnet_a/0.mdl "ark,bg:nnet-copy-egs --frame=0 ark:exp/nnet2_online/nnet_a/egs/egs.5.ark ark:-|nnet-shuffle-egs --buffer-size=5000 --srand=0 ark:- ark:-|" exp/nnet2_online/nnet_a/1.5.mdl 
+# Started at Tue Oct 29 03:45:30 UTC 2019
+#
+bash: line 1: --minibatch-size=256: command not found
+bash: line 1: --minibatch-size=256: command not found
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds
+bash: line 1: --minibatch-size=256: command not found
+bash: line 1: --minibatch-size=256: command not found
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds
+bash: line 1: --minibatch-size=256: command not found
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds
+# Accounting: time=0 threads=1
+# Ended (code 127) at Tue Oct 29 03:45:30 UTC 2019, elapsed time 0 seconds

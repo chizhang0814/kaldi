@@ -6,8 +6,8 @@
 . ./cmd.sh
 . ./path.sh
 
-stage=0
-dbase=/mnt/data/openslr
+stage=18
+dbase=/data/openslr
 aidatatang_url=www.openslr.org/resources/62
 aishell_url=www.openslr.org/resources/33
 magicdata_url=www.openslr.org/resources/68
@@ -257,10 +257,10 @@ if [ $stage -le 17 ]; then
   fi
 fi
 
-exit 0;
+#exit 0;
 
 # chain modeling script
-local/chain/run_cnn_tdnn.sh --test-sets "$test_sets"
+local/chain/run_cnn_tdnn.sh #--test-sets "$test_sets"
 for c in $test_sets; do
   for x in exp/chain_cleaned/*/decode_${c}*_tg; do
     grep WER $x/cer_* | utils/best_wer.sh

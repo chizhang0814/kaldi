@@ -67,7 +67,7 @@ shuffle_buffer_size=5000 # This "buffer_size" variable controls randomization of
 
 add_layers_period=2 # by default, add new layers every 2 iterations.
 num_hidden_layers=3
-stage=-4
+stage=1
 
 splice_width=4 # meaning +- 4 frames on each side for second LDA
 left_context= # if set, overrides splice-width
@@ -99,7 +99,7 @@ cmvn_opts=  # will be passed to get_lda.sh and get_egs.sh, if supplied.
             # only relevant for "raw" features, not lda.
 feat_type=  # Can be used to force "raw" features.
 align_cmd=              # The cmd that is passed to steps/nnet2/align.sh
-align_use_gpu=          # Passed to use_gpu in steps/nnet2/align.sh [yes/no]
+align_use_gpu=yes         # Passed to use_gpu in steps/nnet2/align.sh [yes/no]
 realign_epochs=         # List of epochs, the beginning of which realignment is done
 num_jobs_align=30       # Number of jobs for realignment
 # End configuration section.
@@ -464,7 +464,8 @@ while [ $x -lt $num_iters ]; do
         # index; this increases more slowly than the archive index because the
         # same archive with different frame indexes will give similar gradients,
         # so we want to separate them in time.
-
+        echo $n
+        echo "$cmd $parallel_opts $dir/log/train.$x.$n.log nnet-train$parallel_suffix $parallel_train_opts --minibatch-size=$this_minibatch_size --srand=$x $mdl ark,bg:nnet-copy-egs --frame=$frame ark:$cur_egs_dir/egs.$archive.ark ark:-|nnet-shuffle-egs --buffer-size=$shuffle_buffer_size --srand=$x ark:- ark:-| $dir/$[$x+1].$n.mdl || touch $dir/.error"
         $cmd $parallel_opts $dir/log/train.$x.$n.log \
           nnet-train$parallel_suffix $parallel_train_opts \
           --minibatch-size=$this_minibatch_size --srand=$x "$mdl" \

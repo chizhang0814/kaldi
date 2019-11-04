@@ -35,12 +35,12 @@ else
   fi
 fi
 
-if [ -d ./mmseg-1.3.0 ] ; then
-  echo  >&2 "$0: Warning: old installation of mmseg found. You should manually"
-  echo  >&2 "  delete the directory tools/mmseg and "
-  echo  >&2 "  edit the file tools/env.sh and remove manually all references to it"
-  exit 1
-fi
+#if [ -d ./mmseg-1.3.0 ] ; then
+#  echo  >&2 "$0: Warning: old installation of mmseg found. You should manually"
+#  echo  >&2 "  delete the directory tools/mmseg and "
+#  echo  >&2 "  edit the file tools/env.sh and remove manually all references to it"
+#  exit 1
+#fi
 
 if [ ! -d ./mmseg-1.3.0 ] ; then
   wget https://pypi.python.org/packages/source/m/mmseg/mmseg-1.3.0.tar.gz
