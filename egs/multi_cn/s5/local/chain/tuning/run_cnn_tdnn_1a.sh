@@ -33,7 +33,7 @@
 set -e
 
 # configs for 'chain'
-stage=0
+stage=15
 decode_nj=10
 train_set=train_all_cleaned
 gmm=tri4a_cleaned
