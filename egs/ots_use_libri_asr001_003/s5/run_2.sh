@@ -10,7 +10,7 @@
 #data_url=www.openslr.org/resources/12
 #lm_url=www.openslr.org/resources/11
 mfccdir=mfcc
-stage=4
+stage=6
 
 . ./cmd.sh
 . ./path.sh
