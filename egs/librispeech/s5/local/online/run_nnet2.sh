@@ -8,7 +8,7 @@
 . ./cmd.sh
 
 
-stage=11
+stage=12
 train_stage=0
 use_gpu=true
 dir=exp/nnet2_online/nnet_a
@@ -120,7 +120,7 @@ fi
 if [ $stage -le 12 ]; then
   # this version of the decoding treats each utterance separately
   # without carrying forward speaker information.
-  for test in test_clean test_other dev_clean dev_other; do
+  for test in test_asr001_3k test_asr003_3k; do
     steps/online/nnet2/decode.sh --config conf/decode.config --cmd "$decode_cmd" --nj 30 \
       --per-utt true exp/tri6b/graph_tgsmall data/$test ${dir}_online/decode_${test}_tgsmall_utt || exit 1;
     steps/lmrescore.sh --cmd "$decode_cmd" data/lang_test_{tgsmall,tgmed} \
@@ -135,7 +135,7 @@ if [ $stage -le 13 ]; then
   # this version of the decoding treats each utterance separately
   # without carrying forward speaker information, but looks to the end
   # of the utterance while computing the iVector (--online false)
-  for test in test_clean test_other dev_clean dev_other; do
+  for test in test_asr001_3k test_asr003_3k; do
     steps/online/nnet2/decode.sh --config conf/decode.config --cmd "$decode_cmd" --nj 30 \
       --per-utt true --online false exp/tri6b/graph_tgsmall data/$test \
         ${dir}_online/decode_${test}_tgsmall_utt_offline || exit 1;
